@@ -20,6 +20,7 @@ LFLAGS  = $(LIBPATH) $(LIBS)
 # Main targets
 toh: toh.o TadHanoi.o
 	gcc -o hanoi toh.o TadHanoi.o $(LFLAGS)
+	rm -f *.o
 
 # Source targets
 toh.o: toh.c
