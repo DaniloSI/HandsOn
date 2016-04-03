@@ -1,19 +1,19 @@
-Repositório para algoritmos de hobbie
+# Repositório para algoritmos de hobbie
 
 
-[COMPILAÇÃO]
+### [COMPILAÇÃO]
 
-Para compilar e gerar o executável, é necessário instalar as bibliotecas OpenGl e lglut usando os seguintes códigos:
+##### Para compilar e gerar o executável, é necessário instalar as bibliotecas OpenGl e lglut usando os seguintes códigos:
 
-sudo apt-get install freeglut3 freeglut3-dev
+1. sudo apt-get install freeglut3 freeglut3-dev
 
-sudo apt-get install binutils-gold
+2. sudo apt-get install binutils-gold
 
-Em seguida, abra o terminal na pasta da aplicação e digite: make toh
+##### Em seguida, abra o terminal na pasta da aplicação e digite: 
+1. make toh
 
+### [Execução]
 
-
-[Execução]
-
-Para executar, digite ./hanoi [quantidade de discos] [tempo em segundos]
+##### Para executar, digite:
+1. ./hanoi <quantidade de discos> <tempo em segundos>
 
