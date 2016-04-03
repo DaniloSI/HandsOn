@@ -1,7 +1,7 @@
 # Repositório para algoritmos de hobbie
 
 
-### [COMPILAÇÃO]
+#### Compilação
 
 ##### Para compilar e gerar o executável, é necessário instalar as bibliotecas OpenGl e lglut usando os seguintes códigos:
 
@@ -12,7 +12,7 @@
 ##### Em seguida, abra o terminal na pasta da aplicação e digite: 
 1. make toh
 
-### [Execução]
+### Execução
 
 ##### Para executar, digite:
 1. ./hanoi <quantidade de discos> <tempo em segundos>
