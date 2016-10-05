@@ -19,7 +19,7 @@ public class Matriz {
     private int[][] matriz;
     private int quantidadeMacrobloco;
     private int macroBlocoCorrente = 1;
-    private int quantidadeThreads = 4;
+    private int quantidadeThreads = 1;
     private int quantidadePrimos;
     
     public Matriz(int linhas, int colunas) {
@@ -28,6 +28,12 @@ public class Matriz {
         
         matriz = new int[linhas][colunas];
     }
+
+    public void setQuantidadeThreads(int quantidadeThreads) {
+        this.quantidadeThreads = quantidadeThreads;
+    }
+    
+    
     
     public void setMacroBloco(int linhas, int colunas) {
         this.linhasMB = linhas;
