@@ -40,7 +40,7 @@ public class Main {
         
         //matriz.printMatriz();
         
-        System.out.println("Quantidade de primos encontrados:" + matriz.calculaPrimos() );
+        System.out.println("Quantidade de primos encontrados: " + matriz.calculaPrimos() );
         
         
     }
