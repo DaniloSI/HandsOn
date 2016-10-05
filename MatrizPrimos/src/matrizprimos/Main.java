@@ -21,13 +21,13 @@ public class Main {
         
         Matriz matriz = new Matriz(20000, 20000);
         
-        matriz.setQuantidadeThreads(1);
+        matriz.setQuantidadeThreads(4);
+        System.out.println("Quantidade de Threads: " + matriz.getQuantidadeThreads());
         
-        int valor = 0;
         Random random = new Random();
         for(int i = 0 ; i < 20000 ; i ++) {
             for(int j = 0 ; j < 20000 ; j ++) {
-                matriz.setValor(i, j, /*984037*/ random.nextInt(10000));
+                matriz.setValor(i, j, /*984037*/ random.nextInt(2));
             }
         }
         
@@ -35,11 +35,12 @@ public class Main {
         matriz.setValor(0, 1, 5);
         
         matriz.setMacroBloco(5, 5);
+        System.out.println("Quantidade total de Macroblocos: " + matriz.getQuantidadeMacrobloco());
         
         
         //matriz.printMatriz();
         
-        System.out.println( matriz.calculaPrimos() );
+        System.out.println("Quantidade de primos encontrados:" + matriz.calculaPrimos() );
         
         
     }

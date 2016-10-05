@@ -32,16 +32,16 @@ public class Matriz {
     public void setQuantidadeThreads(int quantidadeThreads) {
         this.quantidadeThreads = quantidadeThreads;
     }
-    
-    
+
+    public int getQuantidadeThreads() {
+        return quantidadeThreads;
+    }
     
     public void setMacroBloco(int linhas, int colunas) {
         this.linhasMB = linhas;
         this.colunasMB = colunas;
         quantidadeMacrobloco = (this.colunasMatriz / colunas) * (this.linhasMatriz / linhas);
         quantidadeMacrobloco++;
-        
-        System.out.println(quantidadeMacrobloco);
     }
     
     public void printMatriz() {
@@ -71,8 +71,6 @@ public class Matriz {
     public int getColunasMB() {
         return colunasMB;
     }
-    
-    
     
     public synchronized int getMacroBloco() {
         int mb = this.macroBlocoCorrente;
@@ -105,9 +103,6 @@ public class Matriz {
         }
         
         return this.quantidadePrimos;
-        
-        
     }
-    
-    
+
 }
