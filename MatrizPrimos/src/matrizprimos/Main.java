@@ -23,7 +23,6 @@ public class Main {
         
         matriz.setQuantidadeThreads(1);
         
-        int valor = 0;
         Random random = new Random();
         for(int i = 0 ; i < 20000 ; i ++) {
             for(int j = 0 ; j < 20000 ; j ++) {
