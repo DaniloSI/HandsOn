@@ -27,7 +27,7 @@ public class Main {
         Random random = new Random();
         for(int i = 0 ; i < 20000 ; i ++) {
             for(int j = 0 ; j < 20000 ; j ++) {
-                matriz.setValor(i, j, /*984037*/ random.nextInt(2));
+                matriz.setValor(i, j, /*984037*/ random.nextInt(100000));
             }
         }
         
