@@ -25,9 +25,9 @@ public class Main {
         System.out.println("Quantidade de Threads: " + matriz.getQuantidadeThreads());
         
         Random random = new Random();
-        for(int i = 0 ; i < 20000 ; i ++) {
-            for(int j = 0 ; j < 20000 ; j ++) {
-                matriz.setValor(i, j, /*984037*/ random.nextInt(100000));
+        for(int linha = 0 ; linha < 20000 ; linha ++) {
+            for(int coluna = 0 ; coluna < 20000 ; coluna ++) {
+                matriz.setValor(linha, coluna, /*984037*/ random.nextInt(100000));
             }
         }
         
