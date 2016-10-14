@@ -37,11 +37,9 @@ public class Main {
         matriz.setMacroBloco(5, 5);
         System.out.println("Quantidade total de Macroblocos: " + matriz.getQuantidadeMacrobloco());
         
-        
         //matriz.printMatriz();
         
         System.out.println("Quantidade de primos encontrados: " + matriz.calculaPrimos() );
-        
         
     }
     
