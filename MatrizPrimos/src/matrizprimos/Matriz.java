@@ -15,7 +15,7 @@ import java.util.Iterator;
 public class Matriz {
     
     private int linhasMatriz, colunasMatriz;
-    private int linhasMB, colunasMB;
+    private int linhasMacroBloco, colunasMacroBloco;
     private int[][] matriz;
     private int quantidadeMacrobloco;
     private int macroBlocoCorrente = 1;
@@ -38,59 +38,59 @@ public class Matriz {
     }
     
     public void setMacroBloco(int linhas, int colunas) {
-        this.linhasMB = linhas;
-        this.colunasMB = colunas;
-        quantidadeMacrobloco = (this.colunasMatriz / colunas) * (this.linhasMatriz / linhas);
+        this.linhasMacroBloco = linhas;
+        this.colunasMacroBloco = colunas;
+        quantidadeMacrobloco = (colunasMatriz / colunas) * (linhasMatriz / linhas);
         quantidadeMacrobloco++;
     }
     
     public void printMatriz() {
-        for(int i = 0 ; i < this.linhasMatriz ; i ++) {
-            for(int j = 0 ; j < this.colunasMatriz ; j ++) {
-                System.out.print(matriz[i][j] + "   ");
+        for(int linha = 0 ; linha < linhasMatriz ; linha ++) {
+            for(int coluna = 0 ; coluna < colunasMatriz ; coluna ++) {
+                System.out.print( matriz[linha][coluna] + "   " );
             }
-            System.out.println("");
+            System.out.println( "" );
         }
     }
     
-    public void setValor(int i, int j, int valor) {
-        matriz[i][j] = valor;
+    public void setValor(int linha, int coluna, int valor) {
+        matriz[linha][coluna] = valor;
     }
     
-    public int getValor(int mb, int i, int j) {
-        int linha = ( (mb - 1) / (this.colunasMatriz / colunasMB) ) * linhasMB;
-        int coluna = ( (mb - 1) % (this.colunasMatriz / colunasMB) ) * colunasMB;
+    public int getValor(int macroBloco, int paramLinha, int paramColuna) {
+        int linha = ( (macroBloco - 1) / (colunasMatriz / colunasMacroBloco) ) * linhasMacroBloco;
+        int coluna = ( (macroBlocob - 1) % (colunasMatriz / colunasMacroBloco) ) * colunasMacroBloco;
         
-        return matriz[linha + i][coluna + j];
+        return matriz[linha + paramLinha][coluna + paramColuna];
     }
 
-    public int getLinhasMB() {
-        return linhasMB;
+    public int getLinhasMacroBloco() {
+        return linhasMacroBloco;
     }
 
-    public int getColunasMB() {
-        return colunasMB;
+    public int getColunasMacroBloco() {
+        return colunasMacroBloco;
     }
     
     public synchronized int getMacroBloco() {
-        int mb = this.macroBlocoCorrente;
-        this.macroBlocoCorrente++;
-        return mb;
+        int macroBloco = macroBlocoCorrente;
+        macroBlocoCorrente++;
+        return macroBloco;
     }
     
     public int getQuantidadeMacrobloco() {
-        return this.quantidadeMacrobloco;
+        return quantidadeMacrobloco;
     }
     
     public synchronized void setQuantidadePrimos(int valor) {
-        this.quantidadePrimos += valor;
+        quantidadePrimos += valor;
     }
     
     public int calculaPrimos() throws InterruptedException {
         ArrayList<Thread> threads = new ArrayList<>();
         Iterator<Thread> iterator;
         
-        for(int i = 0 ; i < this.quantidadeThreads ; i++) {
+        for(int i = 0 ; i < quantidadeThreads ; i++) {
             Thread thread = new ThreadCalculaPrimos(this);
             threads.add(thread);
             thread.start();
@@ -102,7 +102,7 @@ public class Matriz {
             iterator.next().join();
         }
         
-        return this.quantidadePrimos;
+        return quantidadePrimos;
     }
 
 }
