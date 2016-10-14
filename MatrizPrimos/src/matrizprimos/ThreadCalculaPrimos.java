@@ -12,41 +12,38 @@ import static java.lang.Math.sqrt;
  * @author danilo
  */
 public class ThreadCalculaPrimos extends Thread {
-    
-    private Matriz m;
-    
-    public ThreadCalculaPrimos(Matriz m) {
-        this.m = m;
+
+    private Matriz matriz;
+
+    public ThreadCalculaPrimos(Matriz matrizParam) {
+        matriz = matrizParam;
     }
-    
-    
+
     @Override
     public void run(){
         int macrobloco;
-        
-        while ( (macrobloco = m.getMacroBloco()) < m.getQuantidadeMacrobloco() ) {
+
+        while ( (macrobloco = matriz.getMacroBloco()) < matriz.getQuantidadeMacrobloco() ) {
             int quantidadePrimo = 0;
-            
-            for(int i = 0 ; i < m.getLinhasMB() ; i++) {
-                for(int j = 0 ; j < m.getColunasMB() ; j++) {
-                    if ( isPrimo( m.getValor(macrobloco, i, j)) )
+
+            for(int linha = 0 ; linha < matriz.getLinhasMacroBloco() ; linha++) {
+                for(int coluna = 0 ; coluna < matriz.getColunasMacroBloco() ; coluna++) {
+                    if ( isPrimo( matriz.getValor(macrobloco, linha, coluna)) )
                         quantidadePrimo++;
                 }
             }
-            
-            m.setQuantidadePrimos(quantidadePrimo);
+
+            matriz.setQuantidadePrimos(quantidadePrimo);
         }
     }
-    
+
     private boolean isPrimo(int valor) {
         if (valor <= 2)
             return true;
-        
+
         for (int i = 2 ; i <= sqrt(valor) + 1 ; i++ )
             if (valor % i == 0) return false;
-        
-        
-        
+
         return true;
     }
     
