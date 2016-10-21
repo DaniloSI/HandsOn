@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package matrizprimos;
+package matrizprimos.application;
+
+import matrizprimos.domain.Matriz;
 
 import java.util.Random;
 
@@ -25,9 +27,9 @@ public class Main {
         System.out.println("Quantidade de Threads: " + matriz.getQuantidadeThreads());
         
         Random random = new Random();
-        for(int linha = 0 ; linha < 20000 ; linha ++) {
-            for(int coluna = 0 ; coluna < 20000 ; coluna ++) {
-                matriz.setValor(linha, coluna, /*984037*/ random.nextInt(100000));
+        for(int i = 0 ; i < 20000 ; i ++) {
+            for(int j = 0 ; j < 20000 ; j ++) {
+                matriz.setValor(i, j, /*984037*/ random.nextInt(10));
             }
         }
         
@@ -37,9 +39,11 @@ public class Main {
         matriz.setMacroBloco(5, 5);
         System.out.println("Quantidade total de Macroblocos: " + matriz.getQuantidadeMacrobloco());
         
+        
         //matriz.printMatriz();
         
         System.out.println("Quantidade de primos encontrados: " + matriz.calculaPrimos() );
+        
         
     }
     
